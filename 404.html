@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Page Not Found</title>
+  <!-- Using Tailwind via CDN for quick styling — see www.github.com/zxtni | www.zxtni.dev -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pulling in Lucide icons from CDN — more at www.github.com/zxtni | www.zxtni.dev -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ring: 'rgb(59 130 246 / 0.5)' },
+          keyframes: {
+            orbit: {
+              '0%': { transform: 'rotate(0deg) translateX(80px) rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg) translateX(80px) rotate(-360deg)' }
+            }
+          },
+          animation: {
+            orbit: 'orbit 8s linear infinite'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .bg-gradient-text {
+      background: linear-gradient(to right, #2563eb, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .group:hover .group-hover-scale { transform: scale(1.1); }
+    .group:hover .group-hover-left { transform: translateX(-4px); }
+
+    /* Little entrance animations to make it feel alive — www.github.com/zxtni | www.zxtni.dev */
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.6); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen w-full bg-[#060010] flex items-center justify-center px-6 py-12 overflow-hidden">
+
+  <!-- Central wrapper for the 404 layout — www.github.com/zxtni | www.zxtni.dev -->
+  <div class="flex flex-col items-center justify-center gap-10 text-center max-w-4xl w-full">
+
+    <!-- Fun ghost with a few orbiting bits — www.github.com/zxtni | www.zxtni.dev -->
+    <div class="relative h-32 mb-10">
+      
+      <!-- The main ghost sits in the center — www.github.com/zxtni | www.zxtni.dev -->
+      <div class="absolute inset-0 flex items-center justify-center"
+           style="opacity: 0; animation: scaleIn 0.7s ease-out 0.1s forwards;">
+        <div class="flex size-20 items-center justify-center rounded-2xl border-2 border-gray-200 bg-white text-gray-900 shadow-xl">
+          <i data-lucide="ghost" class="h-12 w-12 text-gray-600"></i>
+        </div>
+      </div>
+
+      <!-- Small orbiting elements circling the ghost — www.github.com/zxtni | www.zxtni.dev -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="relative w-56 h-56">
+          
+          <!-- Orbit 1: A hint that the page is missing (top) — www.github.com/zxtni | www.zxtni.dev -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-12 bg-white/70 rounded-xl border border-gray-300 flex items-center justify-center opacity-70 animate-orbit shadow-lg" style="animation-delay: 0s;">
+            <i data-lucide="file-x" class="h-6 w-6 text-red-500"></i>
+          </div>
+
+          <!-- Orbit 2: Blue orb on the right — yeh wala blue hai — www.github.com/zxtni | www.zxtni.dev -->
+          <div class="absolute top-1/2 -right-6 -translate-y-1/2 w-12 h-12 bg-blue-500/80 rounded-xl flex items-center justify-center opacity-80 animate-orbit shadow-lg border border-blue-300" style="animation-delay: -2s;">
+            <i data-lucide="wifi-off" class="h-6 w-6 text-white"></i> <!-- Looks like internet went missing — www.github.com/zxtni | www.zxtni.dev -->
+          </div>
+
+          <!-- Orbit 3: A little frown to match the mood (bottom) — www.github.com/zxtni | www.zxtni.dev -->
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-11 h-11 bg-purple-400/50 rounded-xl flex items-center justify-center opacity-60 animate-orbit shadow-md" style="animation-delay: -4s;">
+            <i data-lucide="frown" class="h-6 w-6 text-purple-600"></i>
+          </div>
+
+          <!-- Orbit 4: A search icon to try again (left) — www.github.com/zxtni | www.zxtni.dev -->
+          <div class="absolute top-1/2 -left-6 -translate-y-1/2 w-10 h-10 bg-yellow-300/60 rounded-xl flex items-center justify-center opacity-60 animate-orbit shadow-md" style="animation-delay: -6s;">
+            <i data-lucide="search" class="h-5 w-5 text-yellow-600"></i>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Big bold 404 title — www.github.com/zxtni | www.zxtni.dev -->
+    <h1 class="text-8xl font-bold bg-gradient-text leading-tight"
+        style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.5s forwards;">
+      404
+    </h1>
+
+    <!-- Short note explaining what happened — www.github.com/zxtni | www.zxtni.dev -->
+    <p class="text-2xl text-gray-400 mt-4 max-w-xl"
+        style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.7s forwards;">
+      The page you're looking for doesn't exist. It may have been moved or deleted.
+    </p>
+
+    <!-- Handy buttons to go home or back — www.github.com/zxtni | www.zxtni.dev -->
+    <div class="flex w-full max-w-md flex-col sm:flex-row gap-4 justify-center">
+      <button onclick="window.location.href='/'" 
+              class="group inline-flex items-center justify-center rounded-xl text-lg font-medium h-12 px-8 bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors"
+              style="opacity: 0; animation: slideInLeft 0.8s ease-out 0.9s forwards;">
+        <i data-lucide="home" class="h-6 w-6 mr-2 transition-transform group-hover-scale"></i>
+        Go Home
+      </button>
+      <button onclick="window.history.back()" 
+              class="group inline-flex items-center justify-center rounded-xl text-lg font-medium h-12 px-8 border border-gray-300 bg-white shadow-lg hover:bg-gray-50 hover:text-gray-900 transition-colors"
+              style="opacity: 0; animation: slideInRight 0.8s ease-out 0.9s forwards;">
+        <i data-lucide="arrow-left" class="h-6 w-6 mr-2 transition-transform group-hover-left"></i>
+        Go Back
+      </button>
+    </div>
+  </div>
+
+  <!-- Initialize Lucide icons so they render — www.github.com/zxtni | www.zxtni.dev -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

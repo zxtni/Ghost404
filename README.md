@@ -16,11 +16,14 @@ Clean, animated 404 page built with Tailwind CSS and Lucide icons. Drop it into 
 - **Tailwind CSS** via CDN
 - **Lucide** icons via CDN
 
+
 ### Links
 <img src="assets/readme-icons/github.png" alt="GitHub" width="20" height="20" style="vertical-align: text-bottom; margin-right: 6px;"> **GitHub:** [github.com/zxtni](https://github.com/zxtni)  
+
 <img src="assets/readme-icons/instagram.png" alt="Instagram" width="20" height="20" style="vertical-align: text-bottom; margin-right: 6px;"> **Instagram:** [@igofrahul](https://www.instagram.com/igofrahul) 
 
 <img src="assets/readme-icons/telegram.png" alt="Telegram" width="20" height="20" style="vertical-align: text-bottom; margin-right: 6px;"> **Telegram:** [@zxtni](https://t.me/zxtni)
+
 
 <img src="assets/readme-icons/license.png" alt="License" width="20" height="20" style="vertical-align: middle; margin-right: 6px;"> **License**
 
@@ -29,6 +32,7 @@ Released under the MIT License. You can use, modify, and distribute it with attr
 <img src="assets/readme-icons/heart.png" alt="Heart" width="20" height="20" style="vertical-align: middle; margin-right: 6px;"> **Thank you**
 
 Thanks for checking out Ghost404! If it helped, consider dropping a star on GitHub. 🙌
+
 
 
 
